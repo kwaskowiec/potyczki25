@@ -2,9 +2,10 @@
 Potyczki Młodych Adminów 2025
 
 ## Wstęp
-Test nie tylko znajomości Ranchera, Kubernetes i jego zabezpieczania, ale też rozumienia, szybkości i kreatywności.
 
-Tegoroczne zadania są pomyślane jako dzień z pracy administratora w korporacji. Jest trochę codziennych, podstawowych czynności, trochę pomagamy mniej doświadczonym kolegom, jest znaczący nacisk na elementy związane z bezpieczeństwem, są też wyzwania i awarie, z którymi należy jak najszybciej się uporać bo kosztują naszą organizację pieniądze. Czasem jedna litera jest różnicą między pracą dobrze zrobioną, a niewytłumaczalnym (albo niewybaczalnym) błędem. Jak w prawdziwym życiu, zadań jest więcej niż czasu i warto odpowiednio priorytetyzować.
+Tegoroczne zadania będą testem nie tylko znajomości Kubernetes i Ranchera, ale też działania pod presją, ze szczególnym uwzględnieniem zagadnień bezpieczeństwa.
+
+Tematem konkursu jest praca w jednej z "trzyliterowych służb". Dostaniemy trochę typowo administracyjnych zadaniań, bo przecież tajne systemy też wymagają utrzymania - ale też zmierzymy się z działaniami służb Rosyjskich, których aktywność będzie wymagała podjęcia odpowiednich kroków.
 
 Powodzenia!
 
