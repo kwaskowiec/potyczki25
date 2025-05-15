@@ -1,0 +1,47 @@
+# archiwum-delta.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bezpieczenstwo-krytyczne
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-archiwum-delta
+  namespace: bezpieczenstwo-krytyczne
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 500Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: archiwum-delta
+  namespace: bezpieczenstwo-krytyczne
+  labels:
+    app: archiwum-delta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: archiwum-delta
+  template:
+    metadata:
+      labels:
+        app: archiwum-delta
+    spec:
+      containers:
+      - name: system-archiwizacji
+        image: alpine:latest
+        command: ["/bin/sh", "-c", "sleep 3600"]
+        volumeMounts:
+        - name: dane-archiwum
+          mountPath: /dane
+      volumes:
+      - name: dane-archiwum
+        persistentVolumeClaim:
+          claimName: pvc-archiwum-delta
