@@ -1,0 +1,8 @@
+# klucz-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: klucz-deszyfrujacy
+  namespace: wywiad
+data:
+  sekretny_plik.txt: "Zneutralizowac agenta KREML. Haslo: BURZA_MAJOWA"
