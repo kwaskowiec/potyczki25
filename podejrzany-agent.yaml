@@ -1,0 +1,14 @@
+# podejrzany-agent-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podejrzany-agent
+  namespace: kwarantanna
+  labels:
+    app: podejrzany
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+    ports:
+    - containerPort: 80
