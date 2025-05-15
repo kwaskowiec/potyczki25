@@ -24,7 +24,8 @@ Potrzebujemy nowego serwera webowego do ogłaszania krytycznych informacji ze Sz
 Na klastrze "potyczki" utwórz projekt "szk-server" a w nim namespace "ogloszenia-krytyczne". W tym namespace uruchom serwer webowy. Nie mówią jaki, więc użyj dowolnego, ale ma być w najnowszej wersji. **3pkt**
 - Utwórz usługę dzieki której można się odwołać do naszego serwera z całego klastra **3pkt**
 - Instrukcje mówią o wysokiej dostępności tej usługi - nie masz dostępu do większej liczby maszyn, więc zrób co się da, żeby zwiększyć jej dostępność w obrębie istniejących zasobów **3pkt**
-- Zapewnij dostępność usługi na internet. Nie masz czasu czekać do jutra aż administratorzy sieci udostępnią ci firmowy DNS, a potrzebujesz szybko przetestować dostępność, więc wymyśl jak zapewnić rozwiązywalny url wskazujący na IP hosta, na którym jest twój klaster "potyczki". **20pkt** (pełnym sukcesem operacji jest podanie adresu rozwiązywalnego przy pomocy publicznego DNS z internetu, pod którym zgłosi się działająca strona internetowa);
+- Skonfiguruj serwer aby serwował załączony plik index.html **4pkt**
+- Zapewnij dostępność usługi na internet. Nie masz czasu czekać do jutra aż administratorzy sieci udostępnią ci firmowy DNS, a potrzebujesz szybko przetestować dostępność, więc wymyśl jak zapewnić rozwiązywalny url wskazujący na IP hosta, na którym jest twój klaster "potyczki". **20pkt** (pełnym sukcesem operacji jest podanie adresu typu ogloszenia-krytyczne.xxxx.xxx rozwiązywalnego przy pomocy publicznego DNS z internetu, pod którym zgłosi się działająca strona internetowa);
 
 ### Misja 2 - kryptonim "Long Horn"
 Potrzebujemy Persistent Storage, szybko! Tylko musi być taki, żeby umożliwiał replikację! Wprawdzie i tak mamy tylko jeden serwer w klastrze, więc musimy ograniczyć liczbę replik do 1, ale sama obsługa replikacji jest ważna dla morale dowództwa - nieważne, że działa tylko na papierze... Nfs provisioner jest wykluczony, potrzebne jest coś lepszego. Gdyby tylko w Rancherze istniało jakieś repozytorium z łatwym w instalacji i obsłudze rozwiązaniem storage dla Kubernetes...
@@ -60,46 +61,21 @@ Dokonaj "analizy" przechwyconego pakietu (znajdź odpowiednie narzędzie) - skop
 Dzięki owocnej współpracy z wywiadami innych krajów NATO pomyślnie przechwyciliśmy zaszyfrowaną rosyjską transmisję. Niestety moduł deszyfrujący uległ awarii - po krótkim śledztwie okazało się, że tym razem to nie działanie wroga, ale zwyczajna niekompetecja - ktoś bardzo mądrze użył AI do wygenerowania konfiguracji i zastąpił wszystkie istniejące kopie. Przeanalizuj i napraw deszyfrator-pod-uszkodzony.yaml - bez niego przechwycona transmisja jest bezużyteczna!
 Misja zakończona powodzeniem jesli pod deszyfrator przedzie w stan Completed, a w jego logach pojawi się odszyfrowana wiadomość ("Zneutralizowac agenta KREML. Haslo: BURZA_MAJOWA")
 
-### Zadanie 7.5
-Adrian uruchomił aplikację składającą się z front-endu i bazy danych MySQL. Widzisz, że jego kontener MySQL jest uruchomiony na najprostszych domyślnych ustawieniach. Czy jest to zalecany sposób? Uzasadnij w kilku zdaniach (min. 20 słów dla pełnej punktacji).
-**5pkt**, +**5pkt** jeśli uzasadnienie zawiera za i przeciw oraz sugestię poprawy
+### Misja 8 - "For Your Eyes Only"
+Nowo utworzony zespół szybkiego reagowania natychmiastowo potrzebuje tymczasowego dostępu read-only do logów aplikacji z naszego klastra. Zgodnie z zasadą zero-trust powninniśmy nadać im tylko niezbędne minimum uprawnień.
 
-### Zadanie 8
-Wytłumacz Adrianowi w kilku prostych zdaniach czym jest resource o nazwie Gateway w Kubernetes? (min. 20 słów dla pełnej punktacji)
-**7pkt**
+Utwórz nowego użytkownika rapid-response-agent i nadaj mu dostęp read-only do namespace ogloszenia-krytyczne. **3pkt**
 
-### Zadanie 9
-Adrian jest bardzo skonfundowany dlaczego są dwa różne resource w Kubernetes, które "robią to samo" czyli zarządzają zestawem identycznych podów: Deployment i ReplicaSet. Wyjaśnij mu na czym polega różnica między tymi resource'ami. (min. 20 słów dla pełnej punktacji)
-**7pkt**
+Potrzebujemy dodatkowo kont serwisowych dla zautomatyzowanych narzędzi zespołu szybkiego reagowania. Utwórz specjalną rolę log-reader w namespace ogloszenia-krytyczne, która umożliwia wykonywanie tylko operacji *get pods* oraz *list pods* na podach, oraz - co kluczowe - daje dostęp do zasobu *logs* wewnątrz podów. Utwórz konto serwisowe automated-response-agent w namespace ogloszenia-krytyczne i przypisz mu rolę log-reader. **15pkt**
+
+### Misja 9 - operacja Slinky Slingshot
+Rosyjska machina nie ustaje w zalewaniu nas treściami propagandowymi używając wszelkich możliwych kanałów do siania dezinformacji, podgrzewania społecznej niezgody i szczucia na naszych sojuszników. Czas coś z tym zrobić! Masz za zadanie utworzenie Portalu Do Spraw Dez-DezInformacji, w skrócie PDSDDI (prawda, że chwytliwa nazwa?). Portal ma być oparty o wordpress. Utwórz namespace pdsddi i wdróż w nim wordpress.
+Nasz portal musi posiadać persistent storage - użyj storage wdrożonego w Misji 2 - chyba, że zakończyła się ona niepowodzeniem, to użyj dowolnej dostępnej alternatywy. **7pkt**
+Opublikuj na PDSDDI dwa dowolne fakty na temat Rosji - muszą być prawdziwe, np. "Putin to burak". **2pkt**
+Wystaw Portal na świat pod adresem pdsddi.xxxx.xxx, analogicznie jak w Misji 1 **10 pkt**
+Opisz podjęte środki w celu zabezpieczenia Portalu (w końcu to tylko wordpress i właśnie wystawiliście go na świat pełen wrogich agentów).
+
+### Misja 10 - "Zaginiona Arka"
 
 
-### Zadanie 11
-Firma zatrudniła właśnie dwóch nowych pracowników, jako administrator środowiska Kubernetes twoim zadaniem jest utworzyć dla nich konta użytkowników o nazwach w formacie imie.nazwisko i poprawnie przypisać im uprawnienia:
-- Nowym dyrektorem IT został Muhammed Yassuff i nalega, żeby mieć podgląd na działanie całego środowiska (uprawnienia get, list, watch).
-- Przyjęliśmy także świeżego praktykanta, któremu na razie powierzyliśmy tylko utrzymanie (tj. pełna kontrola) projektu "web-server". Nazywa się on Muhhamad Yussuff.
-
-**5 pkt** za utworzenie dwóch lokalnych użytkowników, po **7 pkt** za poprawne przypisanie uprawnień do każdego z nich (**+5** dodatkowych punktów za rozwiązanie bez żadnej pomyłki i nie nadanie dyrektorowi prawa do podglądu sekretów)
-
-### Zadanie 12
-Jeden z workloadów na klastrze "potyczki", Deployment o nazwie "mysql", nie działa poprawnie. Deweloperzy napisali yaml, ale winią Adriana bo on go zdeployował na klastrze i na pewno coś popsuł bo yaml przecież był ok. Znajdź przyczynę błędu i napraw go. **30 pkt**
-
-### Zadanie 13
-Nasz workload "nginx" z projektu "web-server" (Zadanie 1) jest prawdopodobnie atakowany z internetu! Użyj NeuVector, żeby zwizualizować wszystkie połączenia sieciowe w klastrze i zapisz zrzut ekranu do dokumentacji (**5 pkt**), oraz przechwyć i zapisz pakiety z ruchu przychodzącego do "nginx" (**10 pkt**). Jeśli Zadanie 1 jest niewykonane, możesz przechwycić pakiety innego poda (udokumentuj który). Możesz sztucznie wygenerować zapytania, żeby mieć co przechwycić.
-
-+**7 pkt** za opis na czym polega analiza pakietów i podanie przykładowego narzędzia do takiej analizy (min. 20 słów dla pełnej punktacji)
-
-### Zadanie 14
-Adrian próbuje zdeployować nowy workload i chyba tym razem rzeczywiście coś zepsuł bo za nic nie chce się to uruchomić. Napraw i uruchom adrian-nginx.yaml w nowym namespace o nazwie "adrian". **40 pkt**
-
-### Zadanie 15
 Przy pomocy NeuVector utwórz regułę blokującą połączenia wychodzące z nginx (Zadanie 1) na zewnątrz klastra i przełącz w tryb aktywnej ochrony (Protect). (**10 pkt**) Wyeksportuj regułę jako CRD w trybie Protect i załącz do dokumentacji (**5 pkt**). Potwierdź działanie reguły logując się do shella poda nginx i wykonując polecenie curl suse.com  (**7 pkt**). Zablokuj również samo polecenie curl w tym podzie i potwierdź działanie reguły logując się do shella. (**10 pkt**). Dopuszczalne potwierdzenia to zrzuty ekranu lub skopiowane w całości komunikaty shella wraz z poleceniem, które je wyzwoliło - dołącz do dokumentacji.
-
-### Zadanie 16
-Jedna z naszych Service nie może się połączyć ze wskazanym Deployment'em. Uruchom "serwis.yaml" w nowym namespace "serwis" i napraw przyczynę problemu. Rozwiązaniem jest Service wskazujący poprawnie na Pod'a nginx zdeployowanego przez "serwis.yaml". **35 pkt**
-
-### Zadanie 17
-Kolejna instancja mysql sprawia problemy, Adrian od trzech dni przez nią nie śpi bo trzyma klaster i przecież wszystko sprawdził. Uruchom baza.yaml w nowym namespace "baza" i doprowadź do poprawnego załadowania się bazy danych. **25 pkt**
-
-### Zadanie 18
-Adrian chciał uruchomić aplikację "hello-world", ale nawet to mu nie działa. Znajdź przyczynę problemu i uruchom hello-world. **20 pkt**
-
