@@ -5,35 +5,41 @@ Potyczki Młodych Adminów 2025
 
 Tegoroczne zadania będą testem nie tylko znajomości Kubernetes i Ranchera, ale też działania pod presją, ze szczególnym uwzględnieniem zagadnień bezpieczeństwa.
 
-Tematem konkursu jest praca w jednej z "trzyliterowych służb". Dostaniemy trochę typowo administracyjnych zadaniań, bo przecież tajne systemy też wymagają utrzymania - ale też zmierzymy się z działaniami służb Rosyjskich, których aktywność będzie wymagała podjęcia odpowiednich kroków.
+Tematem konkursu jest praca w jednej z "trzyliterowych służb" - tak tajnych, że nawet nie wymawiamy głośno tych liter. Dostaniemy trochę typowo administracyjnych zadaniań, bo przecież tajne systemy też wymagają obsługi i utrzymania - ale też zmierzymy się z działaniami agentów Rosyjskich, których aktywność będzie wymagała podjęcia odpowiednich kroków!
 
 Powodzenia!
 
 ---
+### Misja specjalna
 
-### "Zadanie 0"
+Specjalna operacja woj... a nie, czekaj - MISJA specjalna zostanie ogłoszona o czasie T+15minut. Obecność obowiązkowa. Misja może odmienić losy kraju - a nawet tego konkursu!
+
+### Misja 0 - kryptonim "Red Tape"
 Najlepiej napisany program i najlepiej wdrożony system jest tykającą bombą bez odpowiedniej dokumentacji. Nikt nie lubi jej pisać, ale jest kluczowa dla łatwości późniejszego utrzymywania i efektywnej współpracy - a także do sprawdzania zadań! Dlatego udokumentuj wszystkie zadania, co najmniej oznaczając te które zostały wykonane, bo **tylko te zostaną sprawdzone**. Niektóre zadania wymagają pisemnej odpowiedzi, umieść je też w dokumentacji.
 
-Opisz kroki wykonane w celu realizacji zadania, szczególnie lokalizacje zasobów, użyte opcje i komendy - nie musisz tego robić bardzo dokładnie, ale w razie wątpliwości będą one działać na twoją korzyść. Na przykład jeśli zadanie nie zostało do końca wykonane, ale znacząca część kroków jest opisana poprawnie, zaliczymy za to częściowe punkty. Albo jeśli zadanie zostało wykonane, ale nie w sposób jaki był spodziewany, to opis będzie kluczem do uzyskania za nie punktów. To, co nie jest opisane, a nie jest oczywiste z interfejsu, będzie rozstrzygane na twoją niekorzyść.
+Opisz kroki wykonane w celu realizacji zadania, szczególnie lokalizacje zasobów, użyte opcje i komendy - nie musisz tego robić bardzo dokładnie, ale w razie wątpliwości będą one działać na twoją korzyść. Na przykład jeśli zadanie nie zostało do końca wykonane, ale znacząca część kroków jest opisana poprawnie, zaliczę za to częściowe punkty. Albo jeśli zadanie zostało wykonane, ale nie w sposób jakiego oczekiwałem, to opis będzie kluczem do uzyskania za nie punktów. To, co nie jest opisane, a nie jest oczywiste z interfejsu Ranchera, będzie rozstrzygane na twoją niekorzyść!
 
-### Zadanie 1
-Na klastrze "potyczki" utwórz projekt "web-server" a w nim namespace "nginx". W tym namespace uruchom kontener “nginx” w najnowszej wersji. **5pkt**
-- Utwórz usługę dzieki której można się odwołać do naszego nginx z całego klastra **5pkt**
-- Chcemy zapewnić wysoką dostępność tej usługi - upewnij się, że cały czas będą działały co najmniej trzy repliki naszego kontenera **2pkt**
-- Zapewnij dostępność usługi na internet. Nie masz czasu czekać aż administratorzy sieci udostępnią ci firmowy DNS, a potrzebujesz szybko przetestować dostępność, więc wymyśl jak zapewnić rozwiązywalny url wskazujący na IP hosta, na którym jest twój klaster "potyczki". **25pkt** (pełnym rozwiązaniem jest podanie adresu typu nginx.xxxx.xxxx.xx rozwiązywalnego przy pomocy DNS z internetu, pod którym zgłosi się działająca usługa);
+### Misja 1 - operacja "Otwarte Okno"
+Potrzebujemy nowego serwera webowego do ogłaszania krytycznych informacji, ale minister cały dzień jadł ośmiorniczki i dlatego dopiero teraz dotarły rozkazy. Wszyscy inni poszli już do domu, więc cała nadzieja w waszym zespole.
+Na klastrze "potyczki" utwórz projekt "wsi-server" a w nim namespace "ogloszenia-krytyczne". W tym namespace uruchom serwer webowy. Nie mówią jaki, więc użyj dowolnego, ale ma być w najnowszej wersji. **3pkt**
+- Utwórz usługę dzieki której można się odwołać do naszego serwera z całego klastra **3pkt**
+- Instrukcje mówią o wysokiej dostępności tej usługi - nie masz dostępu do większej liczby maszyn, więc zrób co się da, żeby zwiększyć jej dostępność w obrębie istniejących zasobów **6pkt**
+- Zapewnij dostępność usługi na internet. Nie masz czasu czekać do jutra aż administratorzy sieci udostępnią ci firmowy DNS, a potrzebujesz szybko przetestować dostępność, więc wymyśl jak zapewnić rozwiązywalny url wskazujący na IP hosta, na którym jest twój klaster "potyczki". **25pkt** (pełnym rozwiązaniem jest podanie adresu rozwiązywalnego przy pomocy publicznego DNS z internetu, pod którym zgłosi się działająca strona internetowa);
 
-### Zadanie 2
- - Sprawdź czy host klastra "potyczki" spełnia wymagania (prerequisites) dla aplikacji Longhorn; doinstaluj ewentualne braki. **5pkt**
+### Misja 2 - kryptonim "Long Horn"
+Potrzebujemy Persistent Storage, szybko!
+ - Sprawdź czy host klastra "potyczki" spełnia wymagania (prerequisites) dla aplikacji Longhorn; doinstaluj ewentualne braki. **3pkt**
  - Z katalogu aplikacji wbudowanych Ranchera zainstaluj Longhorn w najnowszej stabilnej wersji na klastrze "potyczki", ustawiając w konfiguracji instalacyjnej 1 replikę i domyślny StorageClass. **5pkt**
- - Potwierdź status wszystkich podów Longhorna **7pkt**
+ - Potwierdź status wszystkich podów Longhorna **3pkt**
 
-### Zadanie 3
+### Misja 3 - operacja "Koci pazur"
+Kot prezesa się nudzi, należy mu zapewnić jakąś rozrywkę.
 Dodaj nowe repozytorium do katalogu aplikacji Ranchera. URL repo: https://rancher.github.io/rodeo **5pkt**
 
-Zainstaluj aplikację Tetris z nowo dodanego repo. **5 pkt**
+Zainstaluj dowolną grę z nowo dodanego repo. **5 pkt**
 
-### Zadanie 4
-Z katalogu aplikacji zainstaluj NeuVector w najnowszej stabilnej wersji. **10pkt**
+### Misja 4 - kryptonim "Armor Plate"
+Z katalogu aplikacji zainstaluj NeuVector w najnowszej stabilnej wersji. **5pkt**
 
 Włącz funkcję Auto-scan **5 pkt**
 
