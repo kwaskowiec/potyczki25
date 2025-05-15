@@ -58,7 +58,7 @@ Dokonaj "analizy" przechwyconego pakietu (znajdź odpowiednie narzędzie) - skop
 
 ### Misja 7 - kryptonim Enigma Reactivation
 Dzięki owocnej współpracy z wywiadami innych krajów NATO pomyślnie przechwyciliśmy zaszyfrowaną rosyjską transmisję. Niestety moduł deszyfrujący uległ awarii - po krótkim śledztwie okazało się, że tym razem to nie działanie wroga, ale zwyczajna niekompetecja - ktoś bardzo mądrze użył AI do wygenerowania konfiguracji i zastąpił wszystkie istniejące kopie. Przeanalizuj i napraw deszyfrator-pod-uszkodzony.yaml - bez niego przechwycona transmisja jest bezużyteczna!
-Misja zakończona powodzeniem jesli pod deszyfrator przedzie w stan Completed, a w jego logach pojawi się odszyfrowana wiadomość ()
+Misja zakończona powodzeniem jesli pod deszyfrator przedzie w stan Completed, a w jego logach pojawi się odszyfrowana wiadomość ("Zneutralizowac agenta KREML. Haslo: BURZA_MAJOWA")
 
 ### Zadanie 7.5
 Adrian uruchomił aplikację składającą się z front-endu i bazy danych MySQL. Widzisz, że jego kontener MySQL jest uruchomiony na najprostszych domyślnych ustawieniach. Czy jest to zalecany sposób? Uzasadnij w kilku zdaniach (min. 20 słów dla pełnej punktacji).
@@ -72,8 +72,6 @@ Wytłumacz Adrianowi w kilku prostych zdaniach czym jest resource o nazwie Gatew
 Adrian jest bardzo skonfundowany dlaczego są dwa różne resource w Kubernetes, które "robią to samo" czyli zarządzają zestawem identycznych podów: Deployment i ReplicaSet. Wyjaśnij mu na czym polega różnica między tymi resource'ami. (min. 20 słów dla pełnej punktacji)
 **7pkt**
 
-### Zadanie 10
-Dokonaj aktualizacji klastra "potyczki" to nowszej wersji Kubernetes tak, żeby zminimalizować jej wpływ na dostępność uruchomionych workloadów. **10pkt**
 
 ### Zadanie 11
 Firma zatrudniła właśnie dwóch nowych pracowników, jako administrator środowiska Kubernetes twoim zadaniem jest utworzyć dla nich konta użytkowników o nazwach w formacie imie.nazwisko i poprawnie przypisać im uprawnienia:
