@@ -31,7 +31,7 @@ Potrzebujemy Persistent Storage, szybko! Tylko musi być taki, żeby umożliwia�
 Zainstaluj rozwiązanie typu software-defined storage w najnowszej stabilnej wersji na klastrze "potyczki", ustawiając w konfiguracji instalacyjnej 1 replikę i domyślny StorageClass. **5pkt**
 Sukces misji oznacza działającą aplikację storage oraz dostępną StorageClass.
 
-### Misja 3 - operacja "Koci pazur"
+### Misja 3 - operacja "Koci Pazur"
 Kot prezesa się nudzi, należy mu zapewnić jakąś rozrywkę.
 Dodaj nowe repozytorium do katalogu aplikacji Ranchera. URL repo: https://rancher.github.io/rodeo **5pkt**
 
@@ -51,10 +51,14 @@ Wdrożenie AI byłoby niesłychanie użyteczne w naszych zadaniach, idealnie by�
 Użyj NeuVector, żeby przeskanować repozytorium Ollama z rejestru https://registry.hub.docker.com ; jako rozwiązanie podaj nazwę image z największą ilością podatności, oraz liczbę tych podatności. **7pkt**
 
 ### Misja 6 - kryptonim Zero Zaufania
+Nasz system wczesnego ostrzegania wykrył podejrzaną aktywność, którą przechwycilismy. Wdróż na klastrze zinfiltrowany zasób w odpowiednim namespace (podejrzany-agent.yaml). Natychmiast odetnij wszelką komunikację sieciową (przychodzącą i wychodzącą) z/do tego poda, żebyśmy mogli go szczegółowo przeanalizować. **10pkt**
+Przetestuj działanie zabezpieczeń dla połączeń przychodzących i wychodzących z podejrzanego poda. Załącz do odpowiedzi odpowiednie Security Violations z NeuVectora pokazujące zablokowaną próbę naruszenia blokady.**5pkt**
+Utwórz pomocniczego poda nginx o nazwie detektor w namespace kwarantanna. Zmień reguły zabezpieczeń podejrzanego poda, tak, aby dopuszczały połączenie do poda detektor. Wygeneruj ruch sieciowy z podejrzanego-agenta do detektora (cokolwiek, może być ping). Użyj NeuVector aby dokonać przechwycenia pakietów z tej komunikacji. **10pkt**
+Dokonaj "analizy" przechwyconego pakietu (znajdź odpowiednie narzędzie) - skopiuj pola opisujące jeden z pakietów: źródłowe i docelowe IP, protokół, długość, info. **5pkt**
+
+### Misja 7 - Enigma Reactivation
 
 
-
-### Zadanie 7
 Twój niezbyt rozgarnięty kolega z pracy, Adrian, prosi cię o poradę: w klastrze mam pewien resource, ale nie wiem jak znaleźć yaml tego zasobu? Jak go podejrzeć?
 **5pkt**, +**7pkt** za dodatkową metodę
 
