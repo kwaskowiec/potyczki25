@@ -1,0 +1,19 @@
+# deszyfrator-pod-uszkodzony.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: deszyfrator
+  namespace: wywiad
+spec:
+  containers:
+  - name: deszyfrujacy-kontener
+    image: busybox:1.35
+    command: ["/bin/sh", "-c", "echo 'Proba odczytu...' && cat /etc/config/plik.txt && echo 'Odczytano!'"]
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/konfiguracja
+  volumes:
+  - name: config-volume
+    configMap:
+      name: klucz-deszyfrujacy
+    restartPolicy: Never
