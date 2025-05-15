@@ -56,7 +56,8 @@ Przetestuj działanie zabezpieczeń dla połączeń przychodzących i wychodząc
 Utwórz pomocniczego poda nginx o nazwie detektor w namespace kwarantanna. Zmień reguły zabezpieczeń podejrzanego poda, tak, aby dopuszczały połączenie do poda detektor. Wygeneruj ruch sieciowy z podejrzanego-agenta do detektora (cokolwiek, może być ping). Użyj NeuVector aby dokonać przechwycenia pakietów z tej komunikacji. **10pkt**
 Dokonaj "analizy" przechwyconego pakietu (znajdź odpowiednie narzędzie) - skopiuj pola opisujące jeden z pakietów: źródłowe i docelowe IP, protokół, długość, info. **5pkt**
 
-### Misja 7 - Enigma Reactivation
+### Misja 7 - kryptonim Enigma Reactivation
+Dzięki owocnej współpracy z wywiadami innych krajów NATO pomyślnie przechwyciliśmy zaszyfrowaną rosyjską transmisję. Niestety moduł deszyfrujący uległ awarii - po krótkim śledztwie okazało się, że tym razem to nie działanie wroga, ale zwyczajna niekompetecja - ktoś bardzo mądrze użył AI do wygenerowania konfiguracji i zastąpił wszystkie istniejące kopie.
 
 
 Twój niezbyt rozgarnięty kolega z pracy, Adrian, prosi cię o poradę: w klastrze mam pewien resource, ale nie wiem jak znaleźć yaml tego zasobu? Jak go podejrzeć?
