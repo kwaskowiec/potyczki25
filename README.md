@@ -58,9 +58,13 @@ Użyj NeuVector, żeby przeskanować repozytorium Ollama z rejestru https://regi
 
 ### Misja 6 - kryptonim Zero Zaufania
 Nasz system wczesnego ostrzegania wykrył podejrzaną aktywność, którą przechwycilismy. Wdróż na klastrze zinfiltrowany zasób w odpowiednim namespace (podejrzany-agent.yaml). Natychmiast odetnij wszelką komunikację sieciową (przychodzącą i wychodzącą) z/do tego poda, żebyśmy mogli go szczegółowo przeanalizować (wymaga pomyślnego ukończenia Misji 4). **10pkt**
+
 Przetestuj działanie zabezpieczeń dla połączeń przychodzących i wychodzących z podejrzanego poda. Załącz do odpowiedzi odpowiednie Security Violations z NeuVectora pokazujące zablokowaną próbę naruszenia blokady.**5pkt**
 Utwórz pomocniczego poda nginx o nazwie detektor w namespace kwarantanna. Zmień reguły zabezpieczeń podejrzanego poda, tak, aby dopuszczały połączenie do poda detektor. Wygeneruj ruch sieciowy z podejrzanego-agenta do detektora przy pomocy curl. Użyj NeuVector aby dokonać przechwycenia pakietów z tej komunikacji. **10pkt**
+
 Zablokuj narzędzie curl przy pomocy NeuVector. Potwierdź działanie blokady curl pomimo przepuszczenia ruchu sieciowego do poda detektor (załącz zrzut ekranu lub skopiowane w całości komunikaty shella wraz z poleceniem, które je wyzwoliło). **7pkt**
+Wyeksportuj regułę jako CRD w trybie Protect i załącz do dokumentacji (**5 pkt**)
+
 Dokonaj "analizy" przechwyconego pakietu (znajdź odpowiednie narzędzie) - do sukcesu misji wystarczy, że skopiujesz pola opisujące jeden z pakietów: źródłowe i docelowe IP, protokół, długość, info. **7pkt**
 
 ### Misja 7 - kryptonim Enigma Reactivation
