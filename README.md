@@ -57,11 +57,8 @@ Utwórz pomocniczego poda nginx o nazwie detektor w namespace kwarantanna. Zmie�
 Dokonaj "analizy" przechwyconego pakietu (znajdź odpowiednie narzędzie) - skopiuj pola opisujące jeden z pakietów: źródłowe i docelowe IP, protokół, długość, info. **5pkt**
 
 ### Misja 7 - kryptonim Enigma Reactivation
-Dzięki owocnej współpracy z wywiadami innych krajów NATO pomyślnie przechwyciliśmy zaszyfrowaną rosyjską transmisję. Niestety moduł deszyfrujący uległ awarii - po krótkim śledztwie okazało się, że tym razem to nie działanie wroga, ale zwyczajna niekompetecja - ktoś bardzo mądrze użył AI do wygenerowania konfiguracji i zastąpił wszystkie istniejące kopie.
-
-
-Twój niezbyt rozgarnięty kolega z pracy, Adrian, prosi cię o poradę: w klastrze mam pewien resource, ale nie wiem jak znaleźć yaml tego zasobu? Jak go podejrzeć?
-**5pkt**, +**7pkt** za dodatkową metodę
+Dzięki owocnej współpracy z wywiadami innych krajów NATO pomyślnie przechwyciliśmy zaszyfrowaną rosyjską transmisję. Niestety moduł deszyfrujący uległ awarii - po krótkim śledztwie okazało się, że tym razem to nie działanie wroga, ale zwyczajna niekompetecja - ktoś bardzo mądrze użył AI do wygenerowania konfiguracji i zastąpił wszystkie istniejące kopie. Przeanalizuj i napraw deszyfrator-pod-uszkodzony.yaml - bez niego przechwycona transmisja jest bezużyteczna!
+Misja zakończona powodzeniem jesli pod deszyfrator przedzie w stan Completed, a w jego logach pojawi się odszyfrowana wiadomość ()
 
 ### Zadanie 7.5
 Adrian uruchomił aplikację składającą się z front-endu i bazy danych MySQL. Widzisz, że jego kontener MySQL jest uruchomiony na najprostszych domyślnych ustawieniach. Czy jest to zalecany sposób? Uzasadnij w kilku zdaniach (min. 20 słów dla pełnej punktacji).
