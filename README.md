@@ -14,6 +14,12 @@ Powodzenia!
 
 Specjalna operacja woj... a nie, czekaj, nie mamy na to kilku lat - MISJA specjalna zostanie ogłoszona o czasie T+15minut. Obecność obowiązkowa. Misja może odmienić losy kraju - a nawet tego konkursu!
 
+Proszę o przygotowanie sobie następujących linków (na razie pozostają prywatne, zostaną upublicznione po ogłoszeniu):
+
+https://github.com/jbiniek/potyczki25-doomwar
+
+https://github.com/jbiniek/potyczki25-moonlanding
+
 ### Misja 0 - kryptonim "Red Tape"
 Najlepiej napisany program i najlepiej wdrożony system jest tykającą bombą bez odpowiedniej dokumentacji. Nikt nie lubi jej pisać, ale jest kluczowa dla łatwości późniejszego utrzymywania i efektywnej współpracy - a także do sprawdzania zadań! Dlatego udokumentuj wszystkie zadania, co najmniej oznaczając te które zostały wykonane, bo **tylko te zostaną sprawdzone**. Niektóre zadania wymagają pisemnej odpowiedzi, umieść je też w dokumentacji. Zalecany - nie, JEDYNIE SŁUSZNY - sposób na przedstawienie dokumentacji to utworzenie repozytorium GitHub (polecam utworzenie forka tego repo).
 
